@@ -1,7 +1,7 @@
 [
     {
-        "itemName": "Coat",
-        "id": "0b7b3fd4-137c-11ed-861d-0242ac120002",
+        "itemName": "Light jacket",
+        "id": "8da638cc-818a-49fe-a410-d2671d3b8178",
         "packed": false
     },
     {
@@ -10,23 +10,13 @@
         "packed": false
     },
     {
-        "itemName": "Long johns",
-        "id": "0feb707a-137c-11ed-861d-0242ac120002",
-        "packed": false
-    },
-    {
-        "itemName": "Mittens/gloves",
-        "id": "11e00986-137c-11ed-861d-0242ac120002",
-        "packed": false
-    },
-    {
         "itemName": "Tuque",
         "id": "1466c5b4-137c-11ed-861d-0242ac120002",
         "packed": false
     },
     {
-        "itemName": "Boots",
-        "id": "19b674ce-137c-11ed-861d-0242ac120002",
+        "itemName": "Long johns",
+        "id": "0feb707a-137c-11ed-861d-0242ac120002",
         "packed": false
     },
     {
@@ -41,7 +31,7 @@
     },
     {
         "itemName": "Phone charger",
-        "id": "1dc7e5b6-137c-11ed-861d-0242ac120002",
+        "id": "05ffced0-137c-11ed-861d-0242ac120002",
         "packed": false
     }
 ]

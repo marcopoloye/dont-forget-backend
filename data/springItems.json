@@ -1,5 +1,10 @@
 [
     {
+        "itemName": "Sweater",
+        "id": "a9efd74e-5497-4e61-a66c-c5e8a426c166",
+        "packed": false
+    },
+    {
         "itemName": "T-shirt/shorts",
         "id": "a2fa4238-feb0-4c66-836d-a7b2bc2d6ef9",
         "packed": false
@@ -10,23 +15,8 @@
         "packed": false
     },
     {
-        "itemName": "Sunscreen",
-        "id": "f9b567a2-137b-11ed-861d-0242ac120002",
-        "packed": false
-    },
-    {
-        "itemName": "Sandals",
-        "id": "029ad44c-137c-11ed-861d-0242ac120002",
-        "packed": false
-    },
-    {
         "itemName": "Sunglasses",
         "id": "175b9150-137c-11ed-861d-0242ac120002",
-        "packed": false
-    },
-    {
-        "itemName": "Bathing suit",
-        "id": "c413f297-8d38-4f17-b3de-00d131c89206",
         "packed": false
     },
     {
