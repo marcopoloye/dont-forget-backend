@@ -6,12 +6,12 @@ const { v4: uuid } = require('uuid');
 const readSummerItems = () => {
     const parsedSummerItems = JSON.parse(fs.readFileSync('./data/summerItems.json'));
     return parsedSummerItems;
-}
+};
 
 router.get('/summer-items', (req, res) => {
     const summerItems = readSummerItems();
 
     res.status(200).json(summerItems);
-})
+});
 
 module.exports = router;

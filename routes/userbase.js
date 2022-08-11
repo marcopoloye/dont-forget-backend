@@ -12,10 +12,9 @@ router.post('/register', (req, res) => {
         last_name: req.body.lastName,
         email: req.body.email,
         password: hashedPassword,
-    }
+    };
 
-    knex('users')
-        .insert(newUser)
+    knex('users').insert(newUser)
         .then(() => {
             res.status(201).send('registered successfully');
         })
@@ -27,15 +26,14 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
 
-    knex('users')
-        .where({email: req.body.email})
+    knex('users').where({email: req.body.email})
         .first()
         .then((user) => {
             const isPasswordCorrect = bcrypt.compareSync(req.body.password, user.password);
 
             if (!isPasswordCorrect) {
                 return res.status(400).send("Invalid password");
-            }
+            };
 
             const token = jwt.sign(
                 { id: user.id, email: user.email },
@@ -48,25 +46,24 @@ router.post('/login', (req, res) => {
         .catch(() => {
             res.status(400).send("Invalid credentials");
         });
-})
+});
 
 router.post('/savelist', (req, res) => {
 
     const list = {
         lists: JSON.stringify(req.body.lists)
-    }
+    };
 
-    knex('users')
-        .where({email: req.body.email})
+    knex('users').where({email: req.body.email})
         .update(list)
         .then(() => {
             res.status(201).send('list updated');
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err);
             res.status(400).send('failed to add list');
         });
-})
+});
 
 router.get('/current', (req, res) => {
     if (!req.headers.authorization) return res.status(401).send("Please login");
@@ -76,17 +73,15 @@ router.get('/current', (req, res) => {
     jwt.verify(authToken, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
           return res.status(401).send("Invalid auth token");
-        }
+        };
     
-        knex("users")
-          .where({ email: decoded.email })
-          .first()
-          .then((user) => {
-
-            delete user.password;
-            res.json(user);
-          });
-      });
-})
+        knex("users").where({ email: decoded.email })
+            .first()
+            .then((user) => {
+                delete user.password;
+                res.json(user);
+            });
+    });
+});
 
 module.exports = router;
