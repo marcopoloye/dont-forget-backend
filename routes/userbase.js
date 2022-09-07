@@ -14,7 +14,7 @@ router.post('/register', (req, res) => {
         password: hashedPassword,
     };
 
-    knex('users').insert(newUser)
+    knex('users2').insert(newUser)
         .then(() => {
             res.status(201).send('registered successfully');
         })
@@ -26,7 +26,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
 
-    knex('users').where({email: req.body.email})
+    knex('users2').where({email: req.body.email})
         .first()
         .then((user) => {
             const isPasswordCorrect = bcrypt.compareSync(req.body.password, user.password);
@@ -54,7 +54,7 @@ router.post('/savelist', (req, res) => {
         lists: JSON.stringify(req.body.lists)
     };
 
-    knex('users').where({email: req.body.email})
+    knex('users2').where({email: req.body.email})
         .update(list)
         .then(() => {
             res.status(201).send('list updated');
@@ -75,7 +75,7 @@ router.get('/current', (req, res) => {
           return res.status(401).send("Invalid auth token");
         };
     
-        knex("users").where({ email: decoded.email })
+        knex("users2").where({ email: decoded.email })
             .first()
             .then((user) => {
                 delete user.password;
