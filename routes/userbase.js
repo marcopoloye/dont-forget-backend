@@ -65,6 +65,19 @@ router.post('/savelist', (req, res) => {
         });
 });
 
+router.delete('/deleteuser', (req, res) => {
+    
+    knex('users').where({email: req.body.email})
+        .del()
+        .then(() => {
+            res.status(201).send('list updated');
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(400).send('failed to add list');
+        });
+})
+
 router.get('/current', (req, res) => {
     if (!req.headers.authorization) return res.status(401).send("Please login");
 
