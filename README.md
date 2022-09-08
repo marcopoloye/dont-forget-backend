@@ -2,21 +2,11 @@
 The backend server for [Don't Forget app](https://github.com/marcopoloye/dont-forget)
 
 ## Installation
-1. Install necessary node modules
-2. Set up 'users' table with columns: 
-    
-    first_name VARCHAR(255)
-    
-    last_name VARCHAR(255)
-    
-    email VARCHAR(255)
-    
-    password VARCHAR(255)
-    
-    lists VARCHAR(5000)
-    
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-3. 'npm start' to start the server
+1. Install necessary node modules by typing 'npm i' into terminal
+2. Set up userbase database
+3. Set up users table by typing 'npm run migrate' into terminal
+4. Start the express server by typing 'npm start' into terminal
+
     
 --------------------------
 Created by: Marco Ye
