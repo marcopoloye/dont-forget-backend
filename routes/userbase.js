@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const knex = require('knex')(require('../knexfile'));
 require('dotenv').config();
 
+// user sign up
 router.post('/register', (req, res) => {
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     
@@ -24,6 +25,7 @@ router.post('/register', (req, res) => {
 
 });
 
+// user login
 router.post('/login', (req, res) => {
 
     knex('users').where({email: req.body.email})
@@ -48,6 +50,7 @@ router.post('/login', (req, res) => {
         });
 });
 
+// saves list to current user
 router.post('/savelist', (req, res) => {
 
     const list = {
@@ -65,8 +68,9 @@ router.post('/savelist', (req, res) => {
         });
 });
 
+// delete user account
 router.delete('/deleteuser', (req, res) => {
-    
+
     knex('users').where({email: req.body.email})
         .del()
         .then(() => {
@@ -78,6 +82,7 @@ router.delete('/deleteuser', (req, res) => {
         });
 })
 
+// checks for existing user
 router.get('/current', (req, res) => {
     if (!req.headers.authorization) return res.status(401).send("Please login");
 
