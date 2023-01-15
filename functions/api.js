@@ -56,7 +56,7 @@ const readWinterItems = () => {
 };
 
 
-app.use('/.netlify/functions/api', router);
+app.use('/', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
