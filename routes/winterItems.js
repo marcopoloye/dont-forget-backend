@@ -1,16 +1,16 @@
-const express = require("express");
-const router = express.Router();
-const fs = require('fs');
+// const express = require("express");
+// const router = express.Router();
+// const fs = require('fs');
 
-const readWinterItems = () => {
-    const parsedWinterItems = JSON.parse(fs.readFileSync('./data/winterItems.json'));
-    return parsedWinterItems;
-};
+// const readWinterItems = () => {
+//     const parsedWinterItems = JSON.parse(fs.readFileSync('./data/winterItems.json'));
+//     return parsedWinterItems;
+// };
 
-router.get('/winter-items', (req, res) => {
-    const winterItems = readWinterItems();
+// router.get('/winter-items', (req, res) => {
+//     const winterItems = readWinterItems();
 
-    res.status(200).json(winterItems);
-});
+//     res.status(200).json(winterItems);
+// });
 
-module.exports = router;
+// module.exports = router;
