@@ -6,15 +6,18 @@
     from = "/fallitems"
     to = "/.netlify/functions/api/fallitems"
     status = 200
-
+    
+[[redirects]]
     from = "/springitems"
     to = "/.netlify/functions/api/springitems"
     status = 200
 
+[[redirects]]
     from = "/winteritems"
     to = "/.netlify/functions/api/winteritems"
     status = 200
 
+[[redirects]]
     from = "/summeritems"
     to = "/.netlify/functions/api/summeritems"
     status = 200
