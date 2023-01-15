@@ -9,8 +9,8 @@
     from = "/winteritems"
     to = "/.netlify/functions/api/winteritems"
 
-    from "/summeritems"
+    from = "/summeritems"
     to = "/.netlify/functions/api/summeritems"
 
-    from "/springitems"
+    from = "/springitems"
     to = "/.netlify/functions/api/springitems"
