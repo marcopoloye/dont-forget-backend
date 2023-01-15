@@ -5,12 +5,16 @@
 [redirects]
     from = "/fallitems"
     to = "/.netlify/functions/api/fallitems"
+    status = 200
 
     from = "/winteritems"
     to = "/.netlify/functions/api/winteritems"
+    status = 200
 
     from = "/summeritems"
     to = "/.netlify/functions/api/summeritems"
+    status = 200
 
     from = "/springitems"
     to = "/.netlify/functions/api/springitems"
+    status = 200
