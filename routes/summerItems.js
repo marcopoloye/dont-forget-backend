@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
-const { v4: uuid } = require('uuid');
 
 const readSummerItems = () => {
     const parsedSummerItems = JSON.parse(fs.readFileSync('./data/summerItems.json'));
