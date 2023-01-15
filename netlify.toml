@@ -1,3 +1,16 @@
 [functions]
     directory = "functions"
     included_files = ["./src/api.js", "./data/fallItems.json", "./data/springItems.json", "./data/summerItems.json", "./data/winterItems.json"]
+
+[redirects]
+    from = "/fallitems"
+    to = "/.netlify/functions/api/fallitems"
+
+    from = "/winteritems"
+    to = "/.netlify/functions/api/winteritems"
+
+    from "/summeritems"
+    to = "/.netlify/functions/api/summeritems"
+
+    from "/springitems"
+    to = "/.netlify/functions/api/springitems"

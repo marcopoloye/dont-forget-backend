@@ -11,25 +11,25 @@ router.get('/test', (req, res) => {
     });
 })
 
-router.get('/fall-items', (req, res) => {
+router.get('/fallitems', (req, res) => {
     const fallItems = readFallItems();
 
     res.status(200).json(fallItems);
 });
 
-router.get('/spring-items', (req, res) => {
+router.get('/springitems', (req, res) => {
     const springItems = readSpringItems();
 
     res.status(200).json(springItems);
 });
 
-router.get('/summer-items', (req, res) => {
+router.get('/summeritems', (req, res) => {
     const summerItems = readSummerItems();
 
     res.status(200).json(summerItems);
 });
 
-router.get('/winter-items', (req, res) => {
+router.get('/winteritems', (req, res) => {
     const winterItems = readWinterItems();
 
     res.status(200).json(winterItems);
