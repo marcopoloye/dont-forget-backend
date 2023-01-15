@@ -1,2 +1,3 @@
-[build]
-    functions = "functions"
+[functions]
+    directory = "functions"
+    included_files = ["./src/api.js", "./data/fallItems.json"]

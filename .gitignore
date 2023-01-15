@@ -26,3 +26,5 @@ yarn-error.log*
 design-pkg
 
 mock-api-docs.md
+# Local Netlify folder
+.netlify
