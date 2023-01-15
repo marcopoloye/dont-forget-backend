@@ -2,7 +2,7 @@
     directory = "functions"
     included_files = ["./src/api.js", "./data/fallItems.json", "./data/springItems.json", "./data/summerItems.json", "./data/winterItems.json"]
 
-[redirects]
+[[redirects]]
     from = "/fallitems"
     to = "/.netlify/functions/api/fallitems"
     status = 200
