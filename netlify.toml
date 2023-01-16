@@ -1,6 +1,6 @@
 [functions]
     directory = "functions"
-    included_files = ["./src/api.js", "./data/fallItems.json", "./data/springItems.json", "./data/summerItems.json", "./data/winterItems.json"]
+    included_files = ["./data/fallItems.json", "./data/springItems.json", "./data/summerItems.json", "./data/winterItems.json"]
 
 [[redirects]]
     from = "/fallitems"
