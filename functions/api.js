@@ -75,9 +75,11 @@ router.post('/register', (req, res) => {
 
     knex('newusers').insert(newUser)
     .then(() => {
+        res.header('Access-Control-Allow-Origin', '*');
         res.status(201).send('registered successfully');
     })
     .catch((err) => {
+        res.header('Access-Control-Allow-Origin', '*');
         res.status(400).send('registration failed');
     });
 
