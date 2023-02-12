@@ -21,3 +21,8 @@
     from = "/summeritems"
     to = "/.netlify/functions/api/summeritems"
     status = 200
+
+[[redirects]]
+    from = "/register"
+    to = "/.netlify/functions/api/register"
+    status = 200

@@ -3,8 +3,8 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-module.exports = {
 
+const connections = {
   development: {
     client: 'pg',
     connection: {
@@ -12,15 +12,19 @@ module.exports = {
       port: '5432',
       database: 'lxjtzbxl',
       user:     'lxjtzbxl',
-      password: 'ouZmfl34I-Ybv-LdwtjKAJ7U0NkVlVa2'
-    },
-    pool: {
-      min: 2,
-      max: 10
+      password: 'ouZmfl34I-Ybv-LdwtjKAJ7U0NkVlVa2',
     },
     migrations: {
       tableName: 'knex_migrations'
     }
-  }
-
+  },
+  production: {
+    client: 'pg',
+    connection: process.env.ELE_URL,
+  },
 };
+
+module.exports = 
+  process.env.NODE_ENV === 'production'
+    ? connections.production
+    : connections.development;
