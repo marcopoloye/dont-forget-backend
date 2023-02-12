@@ -3,6 +3,9 @@ const serverless = require('serverless-http');
 const fs = require('fs');
 const app = express();
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const knex = require('knex')(require('../database/knexfile'));
 
 app.use('/', router);
 
@@ -56,5 +59,17 @@ router.get('/winteritems', (req, res) => {
     res.status(200).json(winterItems);
 });
 
+
+// user sign up
+router.post('/register', (req, res) => {
+    const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+    
+    const newUser = {
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        email: req.body.email,
+        password: hashedPassword,
+    };
+})
 module.exports = app;
 module.exports.handler = serverless(app);
