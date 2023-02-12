@@ -12,7 +12,7 @@ const connections = {
       port: '5432',
       database: 'lxjtzbxl',
       user:     'lxjtzbxl',
-      password: 'ouZmfl34I-Ybv-LdwtjKAJ7U0NkVlVa2',
+      password: process.env.DB_PW,
     },
     migrations: {
       tableName: 'knex_migrations'
