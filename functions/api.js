@@ -63,6 +63,7 @@ router.get('/winteritems', (req, res) => {
 
 // user sign up
 router.post('/register', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     
     const newUser = {
