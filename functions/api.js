@@ -64,13 +64,13 @@ router.get('/winteritems', (req, res) => {
 // user sign up
 router.post('/register', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
-    const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+    // const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     
     const newUser = {
         first_name: req.body.firstName,
         last_name: req.body.lastName,
         email: req.body.email,
-        password: hashedPassword,
+        password: req.body.password,
     };
 
     knex('newusers').insert(newUser)
