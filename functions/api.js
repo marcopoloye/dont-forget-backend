@@ -72,7 +72,7 @@ router.post('/register', (req, res) => {
         password: hashedPassword,
     };
 
-    knex('users').insert(newUser)
+    knex('newusers').insert(newUser)
     .then(() => {
         res.status(201).send('registered successfully');
     })
@@ -84,7 +84,7 @@ router.post('/register', (req, res) => {
 // user login
 router.post('/login', (req, res) => {
 
-    knex('users').where({email: req.body.email})
+    knex('newusers').where({email: req.body.email})
         .first()
         .then((user) => {
             const isPasswordCorrect = bcrypt.compareSync(req.body.password, user.password);
@@ -113,7 +113,7 @@ router.post('/savelist', (req, res) => {
         lists: JSON.stringify(req.body.lists)
     };
 
-    knex('users').where({email: req.body.email})
+    knex('newusers').where({email: req.body.email})
         .update(list)
         .then(() => {
             res.status(201).send('list updated');
@@ -127,7 +127,7 @@ router.post('/savelist', (req, res) => {
 // delete user account
 router.delete('/deleteuser', (req, res) => {
 
-    knex('users').where({email: req.body.email})
+    knex('newusers').where({email: req.body.email})
         .del()
         .then(() => {
             res.status(201).send('list updated');
@@ -149,7 +149,7 @@ router.get('/current', (req, res) => {
           return res.status(401).send("Invalid auth token");
         };
     
-        knex('users').where({ email: decoded.email })
+        knex('newusers').where({ email: decoded.email })
             .first()
             .then((user) => {
                 delete user.password;
