@@ -61,7 +61,23 @@ router.get('/winteritems', (req, res) => {
     res.status(200).json(winterItems);
 });
 
+const signup = () => {
+    const newUser = {
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password,
+    };
 
+    knex('newusers').insert(newUser)
+    .then(() => {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.status(200).send('registered successfully');
+    })
+    .catch((err) => {
+        res.status(400).send('registration failed');
+    });
+}
 // user sign up
 router.post('/register', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -77,23 +93,7 @@ router.post('/register', (req, res) => {
 
     )
     // const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-    const signup = () => {
-        const newUser = {
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-        };
-    
-        knex('newusers').insert(newUser)
-        .then(() => {
-            res.header('Access-Control-Allow-Origin', '*');
-            res.status(200).send('registered successfully');
-        })
-        .catch((err) => {
-            res.status(400).send('registration failed');
-        });
-    }
+
 });
 
 // // user login
