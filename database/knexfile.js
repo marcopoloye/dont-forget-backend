@@ -6,7 +6,7 @@
 
 const connections = {
   development: {
-    client: 'pg',
+    client: 'postgres',
     connection: {
       host: 'salt.db.elephantsql.com',
       port: '5432',
@@ -19,7 +19,7 @@ const connections = {
     }
   },
   production: {
-    client: 'pg',
+    client: 'postgres',
     connection: process.env.ELE_URL,
   },
 };
