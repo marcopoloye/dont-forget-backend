@@ -3,8 +3,8 @@ const serverless = require('serverless-http');
 const fs = require('fs');
 const app = express();
 const router = express.Router();
-const knex = require('knex')(require('../database/knexfile'));
-const request = require('request');
+// const knex = require('knex')(require('../database/knexfile'));
+// const request = require('request');
 // const jwt = require('jsonwebtoken');
 // const bcrypt = require('bcryptjs');
 // require('dotenv').config();
@@ -61,40 +61,40 @@ router.get('/winteritems', (req, res) => {
     res.status(200).json(winterItems);
 });
 
-const signup = () => {
-    const newUser = {
-        first_name: req.body.firstName,
-        last_name: req.body.lastName,
-        email: req.body.email,
-        password: req.body.password,
-    };
 
-    knex('newusers').insert(newUser)
-    .then(() => {
-        res.header('Access-Control-Allow-Origin', '*');
-        res.status(200).send('registered successfully');
-    })
-    .catch((err) => {
-        res.status(400).send('registration failed');
-    });
-}
-// user sign up
-router.post('/register', (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*');
+// // user sign up
+// router.post('/register', (req, res) => {
+//     res.header('Access-Control-Allow-Origin', '*');
 
-    request(
-        { url: 'https://dontforgetapi.netlify.app/register' },
-        (error, response, body) => {
-            if (error) {
-                return res.status(400)
-            }
-            signup()
-        }
+//     request(
+//         { url: 'https://dontforgetapi.netlify.app/register' },
+//         (error, response, body) => {
+//             if (error) {
+//                 return res.status(400)
+//             }
+//             signup()
+//         }
 
-    )
-    // const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-
-});
+//     )
+//     // const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+//     const signup = () => {
+//         const newUser = {
+//             first_name: req.body.firstName,
+//             last_name: req.body.lastName,
+//             email: req.body.email,
+//             password: req.body.password,
+//         };
+    
+//         knex('newusers').insert(newUser)
+//         .then(() => {
+//             res.header('Access-Control-Allow-Origin', '*');
+//             res.status(200).send('registered successfully');
+//         })
+//         .catch((err) => {
+//             res.status(400).send('registration failed');
+//         });
+//     }
+// });
 
 // // user login
 // router.post('/login', (req, res) => {
