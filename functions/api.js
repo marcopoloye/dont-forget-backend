@@ -64,6 +64,8 @@ router.get('/winteritems', (req, res) => {
 // user sign up
 router.post('/register', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS')
+    res.header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
     // const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     
     const newUser = {
